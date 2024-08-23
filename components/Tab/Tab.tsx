@@ -1,6 +1,6 @@
 import { GenericComponentProps } from "@/types";
 import { useTabs } from "./TabContext";
-import { ITabButton } from "./variants/types";
+import { ITabButton } from "./types";
 
 interface TabProps extends GenericComponentProps {
   component: ITabButton;

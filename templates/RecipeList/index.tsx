@@ -2,11 +2,19 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Recipe } from "../../dtos/Recipe";
-import { CardContainer, ImageWrapper, StyledTabs } from "./styles";
-import { Card, DefaultTabButtons, Tab } from "@/components";
+import {
+  CardContainer,
+  ImageWrapper,
+  StyledCard,
+  StyledTabs,
+  TabEndButton,
+  TabMiddleButton,
+  TabStartButton,
+} from "./styles";
+import { Tab } from "@/components";
 
 export function TrendingRecipes(props: { recipes: Recipe[] }) {
-  const [tabId, setTabId] = useState("123");
+  const [tabId, setTabId] = useState<string>('');
 
   const { recipes = [] } = props;
   return (
@@ -15,20 +23,20 @@ export function TrendingRecipes(props: { recipes: Recipe[] }) {
         value={tabId}
         onChangeTab={(tabId) => setTabId(tabId as string)}
       >
-        <Tab tabId="123" component={DefaultTabButtons.middle}>
-          tab1
+        <Tab tabId="123" component={TabStartButton}>
+          Easy
         </Tab>
-        <Tab tabId="234" component={DefaultTabButtons.middle}>
-          tab2
+        <Tab tabId="234" component={TabMiddleButton}>
+          Medium
         </Tab>
-        <Tab tabId="13" component={DefaultTabButtons.end}>
-          tab5
+        <Tab tabId="13" component={TabEndButton}>
+          Hard
         </Tab>
       </StyledTabs>
       <CardContainer>
         {recipes.map((recipe) => {
           return (
-            <Card key={recipe.name} style={{ width: "200px", height: "260px" }}>
+            <StyledCard key={recipe.name}>
               <ImageWrapper>
                 <Image
                   alt={recipe.name}
@@ -39,7 +47,7 @@ export function TrendingRecipes(props: { recipes: Recipe[] }) {
               </ImageWrapper>
               <div>{recipe.name}</div>
               <div>{recipe.difficulty}</div>
-            </Card>
+            </StyledCard>
           );
         })}
       </CardContainer>

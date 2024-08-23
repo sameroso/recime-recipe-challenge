@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { myTheme } from "@/libs/styled-components/theme";
-import { GlobalStyle, ThemeProvider } from "@/libs/styled-components";
+import {
+  GlobalStyle,
+  recipeTheme,
+  ThemeProvider,
+} from "@/libs/styled-components";
 import StyledComponentsRegistry from "@/libs/styled-components/registry";
 import { Container } from "@/components/Container";
 
@@ -22,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <StyledComponentsRegistry>
-          <ThemeProvider theme={myTheme}>
+          <ThemeProvider theme={recipeTheme}>
             <GlobalStyle />
             <Container>{children}</Container>
           </ThemeProvider>
