@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { myTheme } from "@/libs/styled-components/theme";
-import { ThemeProvider } from "@/libs/styled-components";
+import { GlobalStyle, ThemeProvider } from "@/libs/styled-components";
 import StyledComponentsRegistry from "@/libs/styled-components/registry";
+import { Container } from "@/components/Container";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,12 +19,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider theme={myTheme}>
-      <html lang="en">
-        <body className={inter.className}>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-        </body>
-      </html>
-    </ThemeProvider>
+    <html lang="en">
+      <body className={inter.className}>
+        <StyledComponentsRegistry>
+          <ThemeProvider theme={myTheme}>
+            <GlobalStyle />
+            <Container>{children}</Container>
+          </ThemeProvider>
+        </StyledComponentsRegistry>
+      </body>
+    </html>
   );
 }

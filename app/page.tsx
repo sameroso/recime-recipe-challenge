@@ -1,4 +1,3 @@
-import styles from "./page.module.css";
 import { TrendingRecipes } from "@/templates/RecipeList";
 import { recipeService } from "@/services";
 import { headers } from "next/headers";
@@ -13,7 +12,7 @@ export default async function Home() {
   });
 
   return (
-    <main className={styles.main}>
+    <main>
       <TrendingRecipes recipes={recipes} />
     </main>
   );
