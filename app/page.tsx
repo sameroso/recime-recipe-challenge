@@ -1,12 +1,16 @@
-import { Recipe } from "@/dtos/Recipe";
 import styles from "./page.module.css";
 import { TrendingRecipes } from "@/templates/RecipeList";
+import { recipeService } from "@/services";
+import { headers } from "next/headers";
 
 export default async function Home() {
-  const res = await fetch("http://localhost:3000/api/recipes", {
-    next: { revalidate: 3600 },
+  const headerList = headers();
+  const protocol = headerList.get("x-forwarded-proto");
+  const host = headerList.get("x-forwarded-host");
+
+  const recipes = await recipeService.getRecipes({
+    domain: `${protocol}://${host}`,
   });
-  const recipes: Recipe[] = await res.json();
 
   return (
     <main className={styles.main}>
