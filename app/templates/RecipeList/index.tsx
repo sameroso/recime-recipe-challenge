@@ -2,9 +2,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Recipe } from "../../_dtos/Recipe";
-import { DefaultTabButtons, Tab, Tabs } from "../../_components";
 import { CardContainer } from "./styles";
-import { Card } from "../../_components/Card";
+import { Card, DefaultTabButtons, Tab, Tabs } from "@/components";
 
 export default function TrendingRecipes(props: { recipes: Recipe[] }) {
   const [tabId, setTabId] = useState("123");
