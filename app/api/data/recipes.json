@@ -4,5 +4,53 @@
     "position": 0,
     "difficulty": "medium",
     "imageSrc": "/burger.jpg"
+  },
+  {
+    "name": "Breakfast Burger",
+    "position": 0,
+    "difficulty": "medium",
+    "imageSrc": "/burger.jpg"
+  },
+  {
+    "name": "Chicken Burger",
+    "position": 0,
+    "difficulty": "medium",
+    "imageSrc": "/burger.jpg"
+  },
+  {
+    "name": "Beef Burger",
+    "position": 0,
+    "difficulty": "medium",
+    "imageSrc": "/burger.jpg"
+  },
+  {
+    "name": "Shrimp Burger",
+    "position": 0,
+    "difficulty": "medium",
+    "imageSrc": "/burger.jpg"
+  },
+  {
+    "name": "Lamb Burger",
+    "position": 0,
+    "difficulty": "medium",
+    "imageSrc": "/burger.jpg"
+  },
+  {
+    "name": "Bacon Burger",
+    "position": 0,
+    "difficulty": "medium",
+    "imageSrc": "/burger.jpg"
+  },
+  {
+    "name": "Vegetarian Burger",
+    "position": 0,
+    "difficulty": "medium",
+    "imageSrc": "/burger.jpg"
+  },
+  {
+    "name": "Texas Burger",
+    "position": 0,
+    "difficulty": "medium",
+    "imageSrc": "/burger.jpg"
   }
 ]
