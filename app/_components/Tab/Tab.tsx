@@ -15,7 +15,7 @@ export function Tab(props: TabProps) {
 
   return (
     <TabButton
-      $active={tabId === props.tabId ? "true" : "false"}
+      $active={tabId === props.tabId}
       {...props.ButtonProps}
       onClick={(e) => {
         onChange?.(props.tabId);

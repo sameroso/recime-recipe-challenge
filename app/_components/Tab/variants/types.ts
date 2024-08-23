@@ -2,7 +2,7 @@ import { ButtonIntrinsicElements } from "../../Buttons";
 import { ReactNode } from "react";
 
 export interface TabStyleProps {
-  $active: "true" | "false";
+  $active: boolean;
 }
 
 export type ITabButton = (

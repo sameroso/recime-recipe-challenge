@@ -6,7 +6,7 @@ import { ITabButton, TabStyleProps } from "./types";
 const commonStyles = css<TabStyleProps>`
   padding: 10px 20px;
   ${(props) => {
-    return props.$active === "true" ? "background-color:green" : "";
+    return props.$active ? "background-color:green" : "";
   }}
 `;
 
