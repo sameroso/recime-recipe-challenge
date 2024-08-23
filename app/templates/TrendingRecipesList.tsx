@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Recipe } from "../_dtos/Recipe";
 import { DefaultTabButtons, Tab, Tabs } from "../_components";
-import { CardContainer } from "../styles";
+import { CardContainer } from "./styles";
 import { Card } from "../_components/Card";
 
 export default function TrendingRecipes(props: { recipes: Recipe[] }) {
