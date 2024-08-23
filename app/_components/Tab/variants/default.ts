@@ -1,4 +1,3 @@
-"use client";
 import { css, styled } from "@/libs/styled-components";
 import { Button } from "../../Buttons";
 import { ITabButton, TabStyleProps } from "./types";

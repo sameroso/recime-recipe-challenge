@@ -1,5 +1,3 @@
-"use client";
-
 import { ButtonIntrinsicElements } from "../Buttons";
 import { useTabs } from "./TabContext";
 import { ITabButton } from "./variants/types";

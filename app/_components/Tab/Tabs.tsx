@@ -1,5 +1,3 @@
-"use client";
-
 import { TabContainer } from "./styles";
 import { TabProvider } from "./TabContext";
 import { TabId } from "./types";
