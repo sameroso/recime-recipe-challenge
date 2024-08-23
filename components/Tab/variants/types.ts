@@ -1,10 +1,8 @@
-import { ButtonIntrinsicElements } from "../../Buttons";
-import { ReactNode } from "react";
+import { GenericComponentProps, GeneriComponent } from "@/types";
 
 export interface TabStyleProps {
   $active: boolean;
 }
 
-export type ITabButton = (
-  props: ButtonIntrinsicElements & TabStyleProps
-) => ReactNode;
+export type TabButtonProps = GenericComponentProps<TabStyleProps>;
+export type ITabButton = GeneriComponent<TabStyleProps>;

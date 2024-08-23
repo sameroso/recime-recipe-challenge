@@ -1,23 +1,24 @@
-import { ButtonIntrinsicElements } from "../Buttons";
+import { GenericComponentProps } from "@/types";
 import { useTabs } from "./TabContext";
 import { ITabButton } from "./variants/types";
 
-interface TabProps {
-  ButtonProps?: ButtonIntrinsicElements;
+interface TabProps extends GenericComponentProps {
   component: ITabButton;
   tabId: string | number;
 }
 export function Tab(props: TabProps) {
-  const { onChange, tabId } = useTabs();
+  const { onChange, tabId: selectedTabId } = useTabs();
   const TabButton = props.component;
+
+  const { tabId, ...rest } = props;
 
   return (
     <TabButton
-      $active={tabId === props.tabId}
-      {...props.ButtonProps}
+      $active={selectedTabId === tabId}
+      {...rest}
       onClick={(e) => {
         onChange?.(props.tabId);
-        props.ButtonProps?.onClick?.(e);
+        props?.onClick?.(e);
       }}
     />
   );
