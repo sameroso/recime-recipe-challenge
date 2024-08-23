@@ -1,5 +1,6 @@
 "use client"
-import styled from "styled-components";
+
+import { styled } from "@/libs/styled-components";
 
 export const TabContainer = styled.div`
   display: flex;

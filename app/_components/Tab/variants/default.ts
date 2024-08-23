@@ -1,5 +1,5 @@
 "use client";
-import styled, { css } from "styled-components";
+import { css, styled } from "@/libs/styled-components";
 import { Button } from "../../Buttons";
 import { ITabButton, TabStyleProps } from "./types";
 
