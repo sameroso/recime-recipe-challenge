@@ -1,11 +1,11 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { Recipe } from "../../_dtos/Recipe";
+import { Recipe } from "../../app/_dtos/Recipe";
 import { CardContainer } from "./styles";
 import { Card, DefaultTabButtons, Tab, Tabs } from "@/components";
 
-export default function TrendingRecipes(props: { recipes: Recipe[] }) {
+export function TrendingRecipes(props: { recipes: Recipe[] }) {
   const [tabId, setTabId] = useState("123");
 
   const { recipes = [] } = props;

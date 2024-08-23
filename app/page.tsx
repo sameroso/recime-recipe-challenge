@@ -1,7 +1,6 @@
 import styles from "./page.module.css";
 import { Recipe } from "./_dtos/Recipe";
-
-import TrendingRecipes from "./templates/RecipeList";
+import { TrendingRecipes } from "@/templates/RecipeList";
 
 export default async function Home() {
   const res = await fetch("http://localhost:3000/api/recipes", {
