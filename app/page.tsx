@@ -1,5 +1,5 @@
+import { Recipe } from "@/dtos/Recipe";
 import styles from "./page.module.css";
-import { Recipe } from "./_dtos/Recipe";
 import { TrendingRecipes } from "@/templates/RecipeList";
 
 export default async function Home() {
