@@ -15,12 +15,14 @@ import { Tab } from "@/components";
 import { AxiosInstance } from "@/libs/axios";
 import { RecipeService } from "@/services";
 
-export function RecipesList(props: {
+export interface RecipesListProps {
   recipes: Recipe[];
   error: boolean | undefined;
   recipeService: RecipeService;
   clientApi: AxiosInstance;
-}) {
+}
+
+export function RecipesList(props: RecipesListProps) {
   const [tabId, setTabId] = useState<string>("");
 
   const [recipes, setRecipes] = useState<Recipe[]>(props.recipes || []);

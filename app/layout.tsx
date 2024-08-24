@@ -26,14 +26,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Suspense fallback={<Loading />}>
+        <ThemeProvider theme={recipeTheme}>
+          <GlobalStyle />
           <StyledComponentsRegistry>
-            <ThemeProvider theme={recipeTheme}>
-              <GlobalStyle />
+            <Suspense fallback={<Loading />}>
               <Container>{children}</Container>
-            </ThemeProvider>
+            </Suspense>
           </StyledComponentsRegistry>
-        </Suspense>
+        </ThemeProvider>
       </body>
     </html>
   );

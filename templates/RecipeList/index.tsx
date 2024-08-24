@@ -1,15 +1,12 @@
 "use client";
 
-import { Recipe } from "../../dtos/Recipe";
-import { AxiosError } from "@/libs/axios";
 import { recipeService } from "@/services";
-import { RecipesList } from "./RecipeList";
+import { RecipesList, RecipesListProps } from "./RecipeList";
 import { clientApi } from "@/libs/axios/clientApi";
 
-export function Recipes(props: {
-  recipes: Recipe[];
-  error: boolean | undefined;
-}) {
+export function RecipesListTemplate(
+  props: Omit<RecipesListProps, "clientApi" | "recipeService">
+) {
   return (
     <RecipesList
       error={props.error}

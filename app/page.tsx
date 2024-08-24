@@ -1,4 +1,4 @@
-import { Recipes } from "@/templates";
+import { RecipesListTemplate } from "@/templates";
 import { recipeService } from "@/services";
 import { Recipe } from "@/dtos/Recipe";
 import type { AxiosError } from "@/libs/axios";
@@ -22,7 +22,7 @@ export default async function Home() {
   const res = await getRecipes();
   return (
     <main>
-      <Recipes recipes={res.recipes} error={!!res.error} />
+      <RecipesListTemplate recipes={res.recipes} error={!!res.error} />
     </main>
   );
 }

@@ -1,4 +1,5 @@
-import { Button, Card, ITabButton, Tabs, TabStyleProps } from "@/components";
+"use client";
+import { Card, ITabButton, Tabs, TabStyleProps } from "@/components";
 import { css, styled } from "@/libs/styled-components";
 
 export const CardContainer = styled.div`
@@ -41,26 +42,26 @@ export const ImageWrapper = styled.div`
 
 const commonTabStyles = css<TabStyleProps>`
   padding: 10px 20px;
-
+  cursor: pointer;
   border: solid
     ${(props) => {
       return props.$active ? props.theme.colors.primary : "";
     }};
 `;
 
-export const TabStartButton: ITabButton = styled(Button)<TabStyleProps>`
+export const TabStartButton: ITabButton = styled.button<TabStyleProps>`
   border-radius: 5px 0 0 5px;
   ${commonTabStyles}
   border-width: 1px ${({ $active }) => ($active ? "1px" : "0")} 1px 1px;
 `;
 
-export const TabEndButton: ITabButton = styled(Button)<TabStyleProps>`
+export const TabEndButton: ITabButton = styled.button<TabStyleProps>`
   border-radius: 0 5px 5px 0;
   ${commonTabStyles}
   border-width: 1px 1px 1px ${({ $active }) => ($active ? "1px" : "0")};
 `;
 
-export const TabMiddleButton: ITabButton = styled(Button)<TabStyleProps>`
+export const TabMiddleButton: ITabButton = styled.button<TabStyleProps>`
   ${commonTabStyles}
   border-width: 1px 1px 1px 1px;
 `;

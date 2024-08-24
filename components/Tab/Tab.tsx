@@ -1,5 +1,5 @@
-"use client"
-import { GenericComponentProps } from "@/types";
+"use client";
+import { GenericComponentProps } from "../types";
 import { useTabs } from "./TabContext";
 import { ITabButton } from "./types";
 
