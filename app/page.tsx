@@ -1,19 +1,28 @@
-import { TrendingRecipes } from "@/templates/RecipeList";
+import { Recipes } from "@/templates";
 import { recipeService } from "@/services";
-import { headers } from "next/headers";
+import { Recipe } from "@/dtos/Recipe";
+import type { AxiosError } from "@/libs/axios";
+import { serverApi } from "@/libs/axios/serverApi";
+
+const getRecipes = async () => {
+  let error: AxiosError | undefined;
+  let recipes: Recipe[] = [];
+  try {
+    const res = await recipeService.getRecipes(serverApi);
+    recipes = res.data;
+    error = undefined;
+  } catch (e) {
+    error = e as AxiosError;
+    recipes = [];
+  }
+  return { error, recipes };
+};
 
 export default async function Home() {
-  const headerList = headers();
-  const protocol = headerList.get("x-forwarded-proto");
-  const host = headerList.get("x-forwarded-host");
-
-  const recipes = await recipeService.getRecipes({
-    domain: `${protocol}://${host}`,
-  });
-
+  const res = await getRecipes();
   return (
     <main>
-      <TrendingRecipes recipes={recipes} />
+      <Recipes recipes={res.recipes} error={!!res.error} />
     </main>
   );
 }

@@ -1,15 +1,14 @@
 import { Recipe } from "@/dtos/Recipe";
+import { AxiosResponse, AxiosInstance } from "@/libs/axios";
 
-interface GetRecipesArgs {
-  domain?: string;
+type GetRecipes = (api: AxiosInstance) => Promise<AxiosResponse<Recipe[]>>;
+export interface RecipeService {
+  getRecipes: GetRecipes;
 }
-
-const getRecipes = async (args?: GetRecipesArgs) => {
-  const res = await fetch(`${args?.domain || ""}/api/recipes`);
-  const recipes: Recipe[] = await res.json();
-  return recipes;
+const getRecipes: GetRecipes = async (api) => {
+  return api.get<Recipe[]>("/api/recipes");
 };
 
-const recipeService = { getRecipes };
+const recipeService: RecipeService = { getRecipes };
 
 export { recipeService };

@@ -8,6 +8,8 @@ import {
 } from "@/libs/styled-components";
 import StyledComponentsRegistry from "@/libs/styled-components/registry";
 import { Container } from "@/components/Container";
+import { Suspense } from "react";
+import { Loading } from "@/components";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,12 +26,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <StyledComponentsRegistry>
-          <ThemeProvider theme={recipeTheme}>
-            <GlobalStyle />
-            <Container>{children}</Container>
-          </ThemeProvider>
-        </StyledComponentsRegistry>
+        <Suspense fallback={<Loading />}>
+          <StyledComponentsRegistry>
+            <ThemeProvider theme={recipeTheme}>
+              <GlobalStyle />
+              <Container>{children}</Container>
+            </ThemeProvider>
+          </StyledComponentsRegistry>
+        </Suspense>
       </body>
     </html>
   );

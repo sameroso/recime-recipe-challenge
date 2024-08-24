@@ -1,0 +1,16 @@
+.spinner-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner {
+  transform-origin: center;
+  animation: spinner 1.5s linear infinite;
+}
+@keyframes spinner {
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,3 +1,4 @@
+"use client"
 import { GenericComponentProps } from "@/types";
 import { useTabs } from "./TabContext";
 import { ITabButton } from "./types";
@@ -8,9 +9,8 @@ interface TabProps extends GenericComponentProps {
 }
 export function Tab(props: TabProps) {
   const { onChange, tabId: selectedTabId } = useTabs();
-  const TabButton = props.component;
-
-  const { tabId, ...rest } = props;
+  const { tabId, component, ...rest } = props;
+  const TabButton = component;
 
   return (
     <TabButton

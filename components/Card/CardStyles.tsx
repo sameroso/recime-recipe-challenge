@@ -1,3 +1,4 @@
+"use client";
 import { styled } from "@/libs/styled-components";
 
 export const CardContainer = styled.div`
