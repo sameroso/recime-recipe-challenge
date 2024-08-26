@@ -1,8 +1,8 @@
 import { useQuery, UseQueryResult } from "@/libs/react-query";
-import { recipeService } from "../recipeServices";
 import { clientApi } from "@/libs/axios/clientApi";
 import { Recipe } from "@/dtos/Recipe";
-import { queryKeys } from "./queryKeys";
+import { queryKeys } from "../queryKeys";
+import { recipeService } from "@/services";
 
 interface useGetRecipesArgs {
   intialData?: Recipe[];

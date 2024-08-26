@@ -3,7 +3,7 @@
 import { recipeService } from "@/services";
 import { RecipesList, RecipesListProps } from "./RecipeList";
 import { clientApi } from "@/libs/axios/clientApi";
-import { useGetRecipes } from "@/services/recipeService/hooks/useRecipes";
+import { useGetRecipes } from "../../hooks/useRecipes";
 
 export function RecipesListTemplate(
   props: Omit<

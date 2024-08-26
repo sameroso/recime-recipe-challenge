@@ -1,4 +1,5 @@
-import recipes from "../data/recipes.json";
+import { recipeListMock } from "@/mocks";
+
 export async function GET() {
-  return Response.json(recipes);
+  return Response.json(recipeListMock);
 }
