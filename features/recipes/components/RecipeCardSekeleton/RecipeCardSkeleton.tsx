@@ -1,10 +1,6 @@
-import { Skeleton } from "@/components";
+import { generateRandomString } from "@/utils/string";
 import { ImageWrapper, StyledCard } from "../shared/styles";
 import { SkeletonImage, SkeletontTitle } from "./styles";
-
-export function generateRandomString() {
-  return Math.random().toString(36).substring(2, 9);
-}
 
 interface RecipeCardSkeletonProps {
   repeatTimes: number;
