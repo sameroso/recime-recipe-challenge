@@ -8,7 +8,7 @@ import {
   TabMiddleButton,
   TabStartButton,
 } from "./styles";
-import { Skeleton, Tab } from "@/components";
+import { SimpleError, Tab } from "@/components";
 import { AxiosInstance } from "@/libs/axios";
 import { RecipeService } from "@/services";
 import { RecipeCard, RecipeCardSkeleton } from "@/features/recipes";
@@ -61,7 +61,9 @@ export function RecipesList(props: RecipesListProps) {
         </CardContainer>
       )}
       {props.status === "error" && (
-        <div onClick={() => props.refetch()}>deu ruim</div>
+        <div style={{ margin: "auto", width: "fit-content" }}>
+          <SimpleError onReload={props.refetch}></SimpleError>
+        </div>
       )}
       {props.status === "success" && (
         <CardContainer duration={500}>
