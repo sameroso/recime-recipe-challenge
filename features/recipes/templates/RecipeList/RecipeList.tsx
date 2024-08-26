@@ -38,7 +38,13 @@ export function RecipesList(props: RecipesListProps) {
       )}
       {props.status === "error" && (
         <div style={{ margin: "auto", width: "fit-content" }}>
-          <SimpleError onReload={props.refetch}></SimpleError>
+          <SimpleError
+            testIds={{
+              buttonTestId: "reload_recipes_button",
+              containerTestId: "error_loading_recipes",
+            }}
+            onReload={props.refetch}
+          ></SimpleError>
         </div>
       )}
       {props.status === "success" && (
