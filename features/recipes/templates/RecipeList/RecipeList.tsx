@@ -12,6 +12,7 @@ import { SimpleError, Tab } from "@/components";
 import { AxiosInstance } from "@/libs/axios";
 import { RecipeService } from "@/services";
 import { RecipeCard, RecipeCardSkeleton } from "@/features/recipes";
+import { sortRecipesByPosition } from "./utils";
 
 export interface RecipesListProps {
   recipes: Recipe[] | undefined;
@@ -20,11 +21,6 @@ export interface RecipesListProps {
   status: "success" | "pending" | "error";
   refetch: () => void;
 }
-
-const recipesSortedByPosition = (recipes: Recipe[]) =>
-  recipes?.sort((a, b) => {
-    return a.position - b.position;
-  });
 
 export function RecipesList(props: RecipesListProps) {
   const [tabId, setTabId] = useState<Recipe["difficulty"] | "">("");
@@ -68,8 +64,8 @@ export function RecipesList(props: RecipesListProps) {
       {props.status === "success" && (
         <CardContainer duration={500}>
           {[
-            ...recipesSortedByPosition(RecipesEqualToTabId),
-            ...recipesSortedByPosition(RecipesNotEqualToTabId),
+            ...sortRecipesByPosition(RecipesEqualToTabId),
+            ...sortRecipesByPosition(RecipesNotEqualToTabId),
           ]?.map((recipe) => {
             return (
               <div key={recipe.id}>
