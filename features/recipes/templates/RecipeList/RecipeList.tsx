@@ -48,7 +48,7 @@ export function RecipesList(props: RecipesListProps) {
             ...sortRecipesByPosition(RecipesNotEqualToTabId),
           ]?.map((recipe) => {
             return (
-              <div key={recipe.id}>
+              <div data-testid={recipe.id} key={recipe.id}>
                 <RecipeCard
                   difficulty={recipe.difficulty}
                   imageSrc={recipe.imageSrc}
