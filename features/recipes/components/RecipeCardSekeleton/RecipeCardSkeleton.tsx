@@ -6,7 +6,7 @@ interface RecipeCardSkeletonProps {
   repeatTimes: number;
 }
 export function RecipeCardSkeleton(props: RecipeCardSkeletonProps) {
-  const array = Array(props.repeatTimes);
+  const array = Array(props.repeatTimes).fill(null);
   return array.map((val, index) => {
     return (
       <StyledCard key={generateRandomString()} data-testid={index}>
