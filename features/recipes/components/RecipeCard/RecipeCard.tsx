@@ -1,11 +1,6 @@
 "use client";
-import {
-  ImageWrapper,
-  StyledCard,
-  StyledCardProps,
-  SubTitle,
-  Title,
-} from "./styles";
+import { ImageWrapper, StyledCard, StyledCardProps } from "../shared/styles";
+import { SubTitle, Title } from "./styles";
 import Image from "next/image";
 
 interface RecipeCardProps extends StyledCardProps {

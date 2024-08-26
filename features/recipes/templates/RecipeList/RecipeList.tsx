@@ -11,7 +11,7 @@ import {
 import { Skeleton, Tab } from "@/components";
 import { AxiosInstance } from "@/libs/axios";
 import { RecipeService } from "@/services";
-import { RecipeCard } from "@/features/recipes";
+import { RecipeCard, RecipeCardSkeleton } from "@/features/recipes";
 
 export interface RecipesListProps {
   recipes: Recipe[] | undefined;
@@ -56,7 +56,9 @@ export function RecipesList(props: RecipesListProps) {
         </Tab>
       </StyledTabs>
       {props.status === "pending" && (
-        <Skeleton $boderRadius="5px" $height="200px" $width="300px" />
+        <CardContainer>
+          <RecipeCardSkeleton repeatTimes={9} />
+        </CardContainer>
       )}
       {props.status === "error" && (
         <div onClick={() => props.refetch()}>deu ruim</div>
