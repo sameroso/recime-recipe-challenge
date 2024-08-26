@@ -2,7 +2,7 @@
 
 import { recipeService } from "@/services";
 import { RecipesList, RecipesListProps } from "./RecipeList";
-import { clientApi } from "@/libs/axios/clientApi";
+import { api } from "@/libs/axios/api";
 import { useGetRecipes } from "../../hooks/useRecipes";
 
 export function RecipesListTemplate(
@@ -20,7 +20,6 @@ export function RecipesListTemplate(
       status={status}
       recipes={data}
       recipeService={recipeService}
-      clientApi={clientApi}
     />
   );
 }

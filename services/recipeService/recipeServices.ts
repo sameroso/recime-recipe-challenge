@@ -1,12 +1,13 @@
 import { Recipe } from "@/dtos/Recipe";
-import { AxiosResponse, AxiosInstance } from "@/libs/axios";
+import { AxiosResponse } from "@/libs/axios";
+import { api } from "@/libs/axios/api";
 
-type GetRecipes = (api: AxiosInstance) => Promise<AxiosResponse<Recipe[]>>;
+type GetRecipes = () => Promise<AxiosResponse<Recipe[]>>;
 export interface RecipeService {
   getRecipes: GetRecipes;
 }
-const getRecipes: GetRecipes = async (api) => {
-  return api.get<Recipe[]>("/api/recipes");
+const getRecipes: GetRecipes = async () => {
+  return api.get<Recipe[]>("/api/recipesa");
 };
 
 const recipeService: RecipeService = { getRecipes };

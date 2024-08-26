@@ -1,13 +1,12 @@
 "use server";
 
-import { serverApi } from "@/libs/axios/serverApi";
 import { recipeService } from "@/services";
 import { Recipe } from "@/dtos/Recipe";
 
 export const getRecipes = async () => {
   let recipes: Recipe[] | undefined = [];
   try {
-    const res = await recipeService.getRecipes(serverApi);
+    const res = await recipeService.getRecipes();
     recipes = res.data;
   } catch (e) {
     recipes = undefined;

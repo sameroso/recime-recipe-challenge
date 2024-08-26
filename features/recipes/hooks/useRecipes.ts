@@ -1,5 +1,4 @@
 import { useQuery, UseQueryResult } from "@/libs/react-query";
-import { clientApi } from "@/libs/axios/clientApi";
 import { Recipe } from "@/dtos/Recipe";
 import { queryKeys } from "../queryKeys";
 import { recipeService } from "@/services";
@@ -13,7 +12,7 @@ export const useGetRecipes = (args: useGetRecipesArgs) => {
   const query = useQuery({
     queryKey: [queryKeys.getRecipes],
     queryFn: async () => {
-      const res = await recipeService.getRecipes(clientApi);
+      const res = await recipeService.getRecipes();
       return res.data;
     },
     refetchOnMount: false,

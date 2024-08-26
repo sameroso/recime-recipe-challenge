@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Recipe } from "@/dtos/Recipe";
 import { CardContainer } from "./styles";
 import { SimpleError } from "@/components";
-import { AxiosInstance } from "@/libs/axios";
 import { RecipeService } from "@/services";
 import { RecipeCard, RecipeCardSkeleton } from "@/features/recipes";
 import { sortRecipesByPosition } from "./utils";
@@ -12,7 +11,6 @@ import { DifficultyTabs } from "../../components/DifficultyTabs";
 export interface RecipesListProps {
   recipes: Recipe[] | undefined;
   recipeService: RecipeService;
-  clientApi: AxiosInstance;
   status: "success" | "pending" | "error";
   refetch: () => void;
 }
