@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page should snapshot a  medium button 1`] = `
+.c0 {
+  cursor: pointer;
+  border-radius: 9px;
+  background-color: #4697EB;
+  color: white;
+  padding: 10px 20px;
+}
+
+<div>
+  <button
+    class="c0"
+  />
+</div>
+`;
+
+exports[`Page should snapshot a large button 1`] = `
+.c0 {
+  cursor: pointer;
+  border-radius: 9px;
+  background-color: #4697EB;
+  color: white;
+  padding: 10px 30px;
+}
+
+<div>
+  <button
+    class="c0"
+  />
+</div>
+`;
+
+exports[`Page should snapshot a medium button 1`] = `
+.c0 {
+  cursor: pointer;
+  border-radius: 9px;
+  background-color: #4697EB;
+  color: white;
+  padding: 10px 20px;
+}
+
+<div>
+  <button
+    class="c0"
+  />
+</div>
+`;
+
+exports[`Page should snapshot a primary button 1`] = `
+.c0 {
+  cursor: pointer;
+  border-radius: 9px;
+  background-color: #4697EB;
+  color: white;
+  padding: 10px 20px;
+}
+
+<div>
+  <button
+    class="c0"
+  />
+</div>
+`;
+
+exports[`Page should snapshot a small button 1`] = `
+.c0 {
+  cursor: pointer;
+  border-radius: 9px;
+  background-color: #4697EB;
+  color: white;
+  padding: 10px 10px;
+}
+
+<div>
+  <button
+    class="c0"
+  />
+</div>
+`;
