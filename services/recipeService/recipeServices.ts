@@ -7,7 +7,7 @@ export interface RecipeService {
   getRecipes: GetRecipes;
 }
 const getRecipes: GetRecipes = async () => {
-  return api.get<Recipe[]>("/api/recipesa");
+  return api.get<Recipe[]>("/api/recipes");
 };
 
 const recipeService: RecipeService = { getRecipes };
