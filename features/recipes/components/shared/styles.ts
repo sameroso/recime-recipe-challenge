@@ -16,6 +16,7 @@ export const ImageWrapper = styled.div`
 export const StyledCard = styled(Card)<StyledCardProps>`
   width: 200px;
   height: 260px;
+  overflow: hidden;
   border-color: ${({ $active, theme }) =>
     $active ? theme.colors.primary : ""};
 `;

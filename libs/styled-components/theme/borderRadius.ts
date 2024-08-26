@@ -3,5 +3,5 @@ export interface BorderRadius {
 }
 
 export const borderRadius: BorderRadius = {
-  medium: "5px",
+  medium: "9px",
 };
