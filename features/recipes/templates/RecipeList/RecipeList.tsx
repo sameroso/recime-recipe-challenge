@@ -1,18 +1,13 @@
 "use client";
 import { useState } from "react";
 import { Recipe } from "@/dtos/Recipe";
-import {
-  CardContainer,
-  StyledTabs,
-  TabEndButton,
-  TabMiddleButton,
-  TabStartButton,
-} from "./styles";
-import { SimpleError, Tab } from "@/components";
+import { CardContainer } from "./styles";
+import { SimpleError } from "@/components";
 import { AxiosInstance } from "@/libs/axios";
 import { RecipeService } from "@/services";
 import { RecipeCard, RecipeCardSkeleton } from "@/features/recipes";
 import { sortRecipesByPosition } from "./utils";
+import { DifficultyTabs } from "../../components/DifficultyTabs";
 
 export interface RecipesListProps {
   recipes: Recipe[] | undefined;
@@ -37,20 +32,7 @@ export function RecipesList(props: RecipesListProps) {
 
   return (
     <div style={{ margin: "auto" }}>
-      <StyledTabs
-        value={tabId}
-        onChangeTab={(tabId) => setTabId(tabId as Recipe["difficulty"])}
-      >
-        <Tab tabId="easy" component={TabStartButton}>
-          Easy
-        </Tab>
-        <Tab tabId="medium" component={TabMiddleButton}>
-          Medium
-        </Tab>
-        <Tab tabId="hard" component={TabEndButton}>
-          Hard
-        </Tab>
-      </StyledTabs>
+      <DifficultyTabs onChangeTab={setTabId} tabId={tabId} />
       {props.status === "pending" && (
         <CardContainer>
           <RecipeCardSkeleton repeatTimes={9} />

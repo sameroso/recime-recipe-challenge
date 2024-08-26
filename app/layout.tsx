@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import {
   GlobalStyle,
@@ -12,7 +12,10 @@ import { Suspense } from "react";
 import { Loading } from "@/components";
 import { ReactQueryProvider } from "@/libs/react-query/providers";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  weight: ["100", "300", "400", "500", "900"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Recipes",
@@ -26,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <ThemeProvider theme={recipeTheme}>
           <ReactQueryProvider>
             <StyledComponentsRegistry>
