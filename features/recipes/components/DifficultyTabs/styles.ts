@@ -11,25 +11,29 @@ const commonTabStyles = css<TabStyleProps>`
   cursor: pointer;
   border: solid
     ${(props) => {
-      return props.$active ? props.theme.colors.primary : "";
+      return props.$active
+        ? props.theme.colors.primary
+        : props.theme.colors.gray;
     }};
 `;
 
 export const TabStartButton: ITabButton = styled.button`
-  border-radius: 5px 0 0 5px;
+  border-radius: ${({ theme }) => theme.borderRadius.medium} 0 0
+    ${({ theme }) => theme.borderRadius.medium};
   ${commonTabStyles}
-  border-width: 1px ${({ $active }) => ($active ? "1px" : "0")} 1px 1px;
+  border-width: 2px ${({ $active }) => ($active ? "2px" : "0")} 2px 2px;
 `;
 
 export const TabEndButton: ITabButton = styled.button`
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 ${({ theme }) => theme.borderRadius.medium}
+    ${({ theme }) => theme.borderRadius.medium} 0;
   ${commonTabStyles}
-  border-width: 1px 1px 1px ${({ $active }) => ($active ? "1px" : "0")};
+  border-width: 2px 2px 2px ${({ $active }) => ($active ? "2px" : "0")};
 `;
 
 export const TabMiddleButton: ITabButton = styled.button`
   ${commonTabStyles}
-  border-width: 1px 1px 1px 1px;
+  border-width: 2px 2px 2px 2px;
 `;
 
 export const TabText = styled.p`

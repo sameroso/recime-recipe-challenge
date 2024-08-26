@@ -15,7 +15,7 @@ export function RecipeCard(props: RecipeCardProps) {
         <Image alt={props.name} src={props.imageSrc} fill sizes="100%" />
       </ImageWrapper>
       <Title $active={props.$active}>{props.name}</Title>
-      <SubTitle $active={props.$active}>{props.difficulty}</SubTitle>
+      <SubTitle>{props.difficulty}</SubTitle>
     </StyledCard>
   );
 }
