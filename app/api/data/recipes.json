@@ -2,55 +2,64 @@
   {
     "name": "Vegan Burger",
     "position": 0,
-    "difficulty": "medium",
-    "imageSrc": "/burger.jpg"
+    "difficulty": "hard",
+    "imageSrc": "/burger.jpg",
+    "id": "12555"
   },
   {
     "name": "Breakfast Burger",
-    "position": 0,
+    "position": 2,
     "difficulty": "medium",
-    "imageSrc": "/burger.jpg"
+    "imageSrc": "/burger.jpg",
+    "id": "1255sa5"
   },
   {
     "name": "Chicken Burger",
-    "position": 0,
-    "difficulty": "medium",
-    "imageSrc": "/burger.jpg"
+    "position": 1,
+    "difficulty": "easy",
+    "imageSrc": "/burger.jpg",
+    "id": "125ghgr55"
   },
   {
     "name": "Beef Burger",
-    "position": 0,
+    "position": 4,
     "difficulty": "medium",
-    "imageSrc": "/burger.jpg"
+    "imageSrc": "/burger.jpg",
+    "id": "125wrw355"
   },
   {
     "name": "Shrimp Burger",
-    "position": 0,
-    "difficulty": "medium",
-    "imageSrc": "/burger.jpg"
+    "position": 3,
+    "difficulty": "easy",
+    "imageSrc": "/burger.jpg",
+    "id": "125-asad55"
   },
   {
     "name": "Lamb Burger",
-    "position": 0,
-    "difficulty": "medium",
-    "imageSrc": "/burger.jpg"
+    "position": 6,
+    "difficulty": "hard",
+    "imageSrc": "/burger.jpg",
+    "id": "12hjrtsfgj555"
   },
   {
     "name": "Bacon Burger",
-    "position": 0,
+    "position": 7,
     "difficulty": "medium",
-    "imageSrc": "/burger.jpg"
+    "imageSrc": "/burger.jpg",
+    "id": "12asa5552sr555"
   },
   {
     "name": "Vegetarian Burger",
-    "position": 0,
-    "difficulty": "medium",
-    "imageSrc": "/burger.jpg"
+    "position": 5,
+    "difficulty": "easy",
+    "imageSrc": "/burger.jpg",
+    "id": "12asa5552sr123-123123555"
   },
   {
     "name": "Texas Burger",
-    "position": 0,
+    "position": 9,
     "difficulty": "medium",
-    "imageSrc": "/burger.jpg"
+    "imageSrc": "/burger.jpg",
+    "id": "12asa55adsafa-fas-f-asf-asfasf52sr555"
   }
 ]

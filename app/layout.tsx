@@ -10,6 +10,7 @@ import StyledComponentsRegistry from "@/libs/styled-components/registry";
 import { Container } from "@/components/Container";
 import { Suspense } from "react";
 import { Loading } from "@/components";
+import { ReactQueryProvider } from "@/libs/react-query/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,12 +28,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider theme={recipeTheme}>
-          <GlobalStyle />
-          <StyledComponentsRegistry>
-            <Suspense fallback={<Loading />}>
-              <Container>{children}</Container>
-            </Suspense>
-          </StyledComponentsRegistry>
+          <ReactQueryProvider>
+            <StyledComponentsRegistry>
+              <GlobalStyle />
+              <Suspense fallback={<Loading />}>
+                <Container>{children}</Container>
+              </Suspense>
+            </StyledComponentsRegistry>
+          </ReactQueryProvider>
         </ThemeProvider>
       </body>
     </html>

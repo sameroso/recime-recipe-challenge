@@ -1,8 +1,9 @@
 "use client";
 import { Card, ITabButton, Tabs, TabStyleProps } from "@/components";
 import { css, styled } from "@/libs/styled-components";
+import { FlipMove } from "@/libs/flip-move";
 
-export const CardContainer = styled.div`
+export const CardContainer = styled(FlipMove)`
   display: grid;
   width: fit-content;
   margin: auto;
@@ -32,12 +33,6 @@ export const StyledTabs = styled(Tabs)`
 export const StyledCard = styled(Card)`
   width: 200px;
   height: 260px;
-`;
-
-export const ImageWrapper = styled.div`
-  position: relative;
-  height: 190px;
-  width: 100%;
 `;
 
 const commonTabStyles = css<TabStyleProps>`

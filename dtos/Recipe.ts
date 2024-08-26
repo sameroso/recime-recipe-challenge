@@ -3,4 +3,5 @@ export interface Recipe {
   position: number;
   difficulty: "medium" | "hard" | "easy";
   imageSrc: string;
+  id: string;
 }
