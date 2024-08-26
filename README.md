@@ -19,9 +19,17 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Production
+To run in production mode
+```bash
+npm run build
+# and
+npm run start
+```
+
 
 ## Running tests
-To run tests run 
+To run tests
 ```bash
 npm run test
 ```
